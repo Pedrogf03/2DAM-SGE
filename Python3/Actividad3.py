@@ -1,17 +1,20 @@
-import math # Importa las librerias
+import math
 
-n = int(input("Introduce un número: ")) # Se le pide al usuario un numero y se guarda en la variable n
-es_primo = True # Se define la variable es_primo como verdadera
+n = int(input("Introduce un número: "))  # Preguntar por un número
+es_primo = True 
 
+# Si el número es menor o igual a 1, no puede ser primo
 if n <= 1:
-    es_primo = False # Si el numero es menor o igual a uno, es_primo es false
+    es_primo = False
 else:
-    # Si no, se hace un bucle que va desde 2 hasta su raiz cuadrada +1
+    # Comprobamos si el número es divisible por algún número hasta su raíz cuadrada
     for i in range(2, int(math.sqrt(n)) + 1):
-        if n % i == 0: # Si 
+        # Si el número es divisible por i, entonces no es primo
+        if n % i == 0:
             es_primo = False
-            break
+            break  # Salimos del bucle ya que hemos encontrado un divisor
 
+# Imprimimos si el número es primo o no
 if es_primo:
     print("El número", n, "es primo.")
 else:
